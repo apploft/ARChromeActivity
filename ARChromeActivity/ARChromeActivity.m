@@ -27,8 +27,12 @@ static NSString *encodeByAddingPercentEscapes(NSString *input) {
 }
 
 - (void)commonInit {
-    _callbackSource = [[NSBundle mainBundle]objectForInfoDictionaryKey:@"CFBundleName"];
-    _activityTitle = NSLocalizedString(@"Open in Chrome", nil);
+    _callbackSource = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleName"];
+    NSURL *resourcesURL = [[NSBundle bundleForClass:self.class] URLForResource:@"ARChromeActivity" withExtension:@"bundle"];
+    NSBundle *bundle = [NSBundle bundleWithURL:resourcesURL];
+    NSString *defaultString = [bundle localizedStringForKey:@"Open in Chrome" value:@"Open in Chrome" table:@"ARChromeActivity"];
+    
+    _activityTitle = [[NSBundle mainBundle] localizedStringForKey:@"Open in Chrome" value:defaultString table:nil];
 }
 
 - (id)init {
