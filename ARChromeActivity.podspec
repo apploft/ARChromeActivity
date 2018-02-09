@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '6.0'
   s.ios.deployment_target = '5.0'
   s.name         = "ARChromeActivity"
-  s.version      = "1.0.7"
+  s.version      = "1.0.8"
   s.summary      = "A UIActivity subclass for opening URLs in Google Chrome."
   s.homepage     = "https://github.com/apploft/ARChromeActivity"
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
